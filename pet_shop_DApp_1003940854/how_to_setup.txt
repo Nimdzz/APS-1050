@@ -1,0 +1,76 @@
+This PetShop DApp is developed using JavaScript.
+The versions running for this DApp are as follows:
+Truffle v5.1.10 (core: 5.1.10)
+Solidity - ^0.5.0 (solc-js)
+Node v20.15.0
+Web3.js v1.2.1
+Web3 (global) v4.11.1
+lite-server v2.3.0
+Ganache v2.7.1
+Front End Framework: JQuery
+
+For this DApp, we initiate the websit by tpying 'npm run dev' command in the command prompt.
+Install the Truffle IDE globally from the windows terminal:
+
+npm install -g truffle@v5.1.10  (use this version to run the tests)
+
+Install Ganache:
+http://truffleframework.com/ganache and click the download button
+you should see Ganache started at http://127.0.0.1:7545
+run Ganache (w/workspace):
+run Ganache, workspace mode
+Workspace name: Petshop
+ADD PROJECT: navigate and select truffle-config.js
+save workspace
+
+Setup Metamask:
+Install Metamask extension on your default browser.
+Import exixsting wallet by pasting the MNEMONIC words into the recovery seed
+Add network manually:
+New RPC URL field:
+copy RPC server address from Ganache (should be HTTP://127.0.0.1:7545) and paste it to New RPC URL
+Chain ID field:
+write Ganache's Chain ID: 1337 = 0x539 in hex
+Currency Symbol field:
+ETH 
+click save
+In the extension pannel
+click add account or hardware wallet
+then select add a new account
+The Metamask should import a new account listed in your ganache UI
+Add 3 or more accounts to try the functions fully
+
+Run the DApp:
+
+Compile the solidity files:
+truffle compile -all
+
+Migrate:
+truffle migrate --reset
+
+Run:
+npm run dev
+lite-server should run and 
+your default browser should open to page http://localhost:3000/
+Metamask notification should open and ask you if you want to connect Metamask
+Select all previously added account and click connect
+
+The DApp should be ready to use.
+
+############################################
+Trouble Shooting (only on new ganache setup it will go away when the connection is stable, the DApp itself is bug-free)
+
+The DApp and all functions should be ready once it is properly setup
+But it might appear with all pets adopted (only happened once and never seen after)
+Just refresh the page and it will be solved
+
+The transaction may prompt Internal-RPC ERROR (happens only when switching accounts and ganache is newly set up)
+It is a cold-start problem and can be solved by following ways:
+1. refresh the page
+
+2. Manually switch account in the Metamask: 
+click the localhost icon in Metamask pannel 
+you will see the account dropdown list
+click the hiden menu (3 dots) and select switch to this account
+
+3. wait for a couple of minutes and rerun the DApp in a new terminal
